@@ -33,6 +33,7 @@ where option is
                 aws_key=None,
                 aws_secret=None,
                 aws_region=None,
+                aws_token=None,
                 manifest=False,
                 header=False,
                 format=None,
@@ -57,7 +58,7 @@ where option is
   ACCESS_KEY_ID '{{ aws_key }}'
   SECRET_ACCESS_KEY '{{ aws_secret }}'
   {% if aws_token %}
-    SESSION_TOKEN '{{ aws_token }}'
+  SESSION_TOKEN '{{ aws_token }}'
   {% endif %}
   {% else %}
   -- Raise an error if authorization args are not present
