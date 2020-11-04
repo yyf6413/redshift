@@ -56,6 +56,9 @@ where option is
   {% elif aws_key and aws_secret %}
   ACCESS_KEY_ID '{{ aws_key }}'
   SECRET_ACCESS_KEY '{{ aws_secret }}'
+  {% if aws_token %}
+    SESSION_TOKEN '{{ aws_token }}'
+  {% endif %}
   {% else %}
   -- Raise an error if authorization args are not present
   {{ exceptions.raise_compiler_error("You must provide AWS authorization parameters via 'iam_role' or 'aws_key' and 'aws_secret'.") }}
